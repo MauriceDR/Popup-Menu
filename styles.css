@@ -1,86 +1,67 @@
-*, *::after, *::before {
-    box-sizing: border-box;
-    font-family: "Josefin Sans", sans-serif;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 body {
-    background: url("images/hotel-1831072_1920.jpg") no-repeat center center fixed;
+  background: url("images/hotel-1831072_1920.jpg") no-repeat center center fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button {
+  background-color: rgb(46, 134, 192);
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  padding: 10px 25px;
+}
+
+button:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal-container.show {
+  pointer-events: auto;
+  opacity: 1;
 }
 
 .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
-    border: 1px solid black;
-    border-radius: 10px;
-    z-index: 10;
-    background-color: white;
-    width: 500px;
-    max-width: 80%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 30px 50px;
+  width: 500px;
+  max-width: 100%;
+  text-align: center;
 }
 
-.buttonContainer {
-    text-align: center;
-    
-}
-.open-button {
-    
-    position: absolute;
-    top: 50%;
-    padding: 20px;
-    border-radius: 15px;
-    background-color: rgb(86, 206, 82);
+.modal h1 {
+  margin: 0;
 }
 
-.open-button:hover {
-    background-color: rgb(85, 165, 105);
-    cursor: pointer;
-}
-.modal.active {
-    transform: translate(-50%, -50%) scale(1);
-}
-.modal-header {
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
-}
-
-.modal-header .title {
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.modal-header .close-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.modal-body {
-    
-    padding: 10px 15px;
-}
-
-#overlay {
-    position: fixed;
-    opacity: 0;
-    transition: 200ms ease-in-out;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
-    pointer-events: none;
-}
-
-#overlay.active {
-    opacity: 1;
-    pointer-events: all;
+.modal p {
+  font-size: 14px;
+  opacity: 0.7;
 }
